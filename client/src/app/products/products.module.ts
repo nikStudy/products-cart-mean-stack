@@ -10,9 +10,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxStripeModule } from 'ngx-stripe';
 import { LoggedGuard } from './logged.guard';
 import { Checkout2Component } from './checkout2/checkout2.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 @NgModule({
-  declarations: [ProductsListComponent, ShoppingCartComponent, CheckoutComponent, Checkout2Component],
+  declarations: [ProductsListComponent, ShoppingCartComponent, CheckoutComponent, Checkout2Component, ProductDetailsComponent],
   imports: [
     CommonModule,
     FormsModule,

@@ -29,6 +29,7 @@
             <a class="dropdown-item" routerLink="/login" routerLinkActive="active" *ngIf="!sess">Login</a>
             <a class="dropdown-item" routerLink="/registration" routerLinkActive="active" *ngIf="!sess">Register</a>
             <a class="dropdown-item" routerLink="/dashboard" routerLinkActive="active" *ngIf="sess">Dashboard</a>
+            <a class="dropdown-item" routerLink="/profile" routerLinkActive="active" *ngIf="sess">Profile</a>
             <a class="dropdown-item" routerLink="/management" routerLinkActive="active" *ngIf="sess && permission">Management</a>
             <a class="dropdown-item" style="cursor: pointer;" (click)="logout()" *ngIf="sess">Logout</a>
           </div>

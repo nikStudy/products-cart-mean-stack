@@ -64,6 +64,9 @@ const userSchema = new Schema({
       type: String,
       required: true,
       default: 'user'
+    },
+    image: {
+        type: String,
     }
 });
 
