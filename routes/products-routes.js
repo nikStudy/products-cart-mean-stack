@@ -44,6 +44,21 @@ router.get('/products', function(req, res, next){
     });
 });
 
+// get a product based on id from the db
+router.get('/products/:id', function(req, res, next){
+    let productId = req.params.id;
+    Product.findById(productId).then(product => {
+        if(!product) {
+            res.send({ success: false, message: 'Product does not exist.'});
+        } else {
+            res.send({ success: true, product: product });
+        }
+    }).catch(err => {
+        console.log(err);
+        return res.send({ success: false, message: err });
+    });
+});
+
 // add a new product to the db
 router.post('/products', upload.single('productImage'), function(req, res, next){
     console.log(req.file);

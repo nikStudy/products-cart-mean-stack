@@ -14,6 +14,11 @@ export class ProductsService {
     return this.http.get<any>(productUrl);
   }
 
+  getProductById(id): Observable<any>{
+    const productUrl = '/api/';
+    return this.http.get<any>(productUrl + id);
+  }
+
   addItemToCart(id): Observable<any>{
     const url = '/api/add-to-cart/';
     return this.http.get<any>(url + id);

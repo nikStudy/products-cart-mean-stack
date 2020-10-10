@@ -22,9 +22,11 @@ import { LoggedGuard } from './logged.guard';
 import { NotLoggedGuard } from './not-logged.guard';
 import { AuthInterceptor } from './auth.interceptor';
 import { HttpXsrfInterceptor } from './http.interceptor';
+import { ProfileComponent } from './profile/profile.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
 
 @NgModule({
-  declarations: [RegistrationComponent, LoginComponent, DashboardComponent, SocialComponent, ActivationComponent, ResendActivationLinkComponent, SocialErrorComponent, ForgotUsernameComponent, ForgotPasswordComponent, NewPasswordComponent, CheckSessionComponent],
+  declarations: [RegistrationComponent, LoginComponent, DashboardComponent, SocialComponent, ActivationComponent, ResendActivationLinkComponent, SocialErrorComponent, ForgotUsernameComponent, ForgotPasswordComponent, NewPasswordComponent, CheckSessionComponent, ProfileComponent, EditProfileComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,

@@ -117,5 +117,17 @@ export class UserService {
     return this.http.get<any>(url);
   }
 
+  updateProfile(user, userId: string): Observable<any> {
+    const url = '/api/profile/update-profile/';
+    return this.http.put(url + userId + '/', user);
+  }
+
+  updateProfileImage(userId: string, fileToUpload: File): Observable<any> {
+    const url = '/api/profile/update-profile-image/';
+    const formData: FormData = new FormData();
+    formData.append('userImage', fileToUpload, fileToUpload == null ? null : fileToUpload.name);
+    return this.http.put(url + userId + '/', formData);
+  }
+
   
 }

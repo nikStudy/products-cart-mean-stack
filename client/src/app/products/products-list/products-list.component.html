@@ -1,7 +1,24 @@
 <div class="container-fluid pt-5 px-5">
     <br><br>
+    
+    <span>
+        Search:
+        <input [(ngModel)]="query" />
+    </span>
+        
+    <span class="sortWrapper">
+        Sort by:
+        <select [(ngModel)]="orderProp" >
+            <option value="">Choose...</option>
+            <option value="title">Alphabetical (Title)</option>
+            <option value="price">Price (lower to higher)</option>
+            <option value="inversePrice">Price (higher to lower)</option>
+        </select>
+    </span>
+
+    <br><br>
     <div class="row">
-        <div class="col-md-4 col-sm-6 mb-5" *ngFor="let product of products; let i = index">
+        <div class="col-md-4 col-sm-6 mb-5" *ngFor="let product of getProducts(); let i = index">
             <div class="card">
                 <div class="card-header p-0">
                     <img src="http://localhost:4000/uploads/{{ product.image }}" alt="{{ product.image }}" class="w-100 img-fluid img-thumbnail">      
@@ -13,6 +30,7 @@
                 <div class="card-footer">
                     <h3>${{ product.price }}</h3>
                     <button type="button" class="btn" (click)="addToCart(product._id)">Add to Cart</button>
+                    <a class="btn btn-danger text-white details-button" routerLink="/products/{{ product._id }}" routerLinkActive="active" >Read more...</a>
                 </div>
             </div>
         </div>

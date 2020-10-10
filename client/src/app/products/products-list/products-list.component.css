@@ -20,7 +20,7 @@ button {
     padding: 10px;
     background-color: #f4511e;
     color: #fff;
-    margin: 10px 0;
+    margin: 10px 0 10px 10px;
 }
 
 button:hover {
@@ -33,3 +33,27 @@ div.card-footer h3 {
     font-weight: 400;
     color: #818181;
 }
+
+.details-button {
+    padding: 10px;
+    margin-left: 10px;
+}
+
+.details-button:hover {
+    color: red !important;
+    background-color: #ffffff !important;
+    border: 1px solid red;
+}
+
+.sortWrapper {
+    margin-left: 20px;
+}
+
+@media screen and (max-width: 550px){
+    .sortWrapper {
+        display: block;
+        margin-left: 0;
+        margin-top: 20px;
+    }
+}
+

@@ -12,6 +12,8 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { NewPasswordComponent } from './new-password/new-password.component';
 import { LoggedGuard } from './logged.guard';
 import { NotLoggedGuard } from './not-logged.guard';
+import { ProfileComponent } from './profile/profile.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
 
 
 const routes: Routes = [
@@ -24,7 +26,9 @@ const routes: Routes = [
   {path: 'social-error', component: SocialErrorComponent, canActivate: [NotLoggedGuard]},
   {path: 'forgotusername', component: ForgotUsernameComponent, canActivate: [NotLoggedGuard]},
   {path: 'forgotpassword', component: ForgotPasswordComponent, canActivate: [NotLoggedGuard]},
-  {path: 'reset/:token', component: NewPasswordComponent, canActivate: [NotLoggedGuard]}
+  {path: 'reset/:token', component: NewPasswordComponent, canActivate: [NotLoggedGuard]},
+  {path: 'profile', component: ProfileComponent, canActivate: [LoggedGuard]},
+  {path: 'edit-profile', component: EditProfileComponent, canActivate: [LoggedGuard]},
 ];
 
 @NgModule({
